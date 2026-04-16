@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+header {
+    width: 100%;
+    min-height: 80px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+    font-weight: 500;
+}
+
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+/* FORMULÁRIO */
+
+form {
+    margin: 0 auto;
+    padding: 10px;
+    width: 500px;
+}
+
+form fieldset {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+}
+
+form fieldset div {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+form fieldset div label {
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+form fieldset div input {
+    padding: 8px 15px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 16px;
+}
+
+form fieldset div input:focus {
+    outline: none;
+    border-color: #007BFF;
+    box-shadow: 0 0 7px 2px rgba(0, 123, 255, 0.1); /* Efeito de brilho */
+}
+
+form fieldset div select {
+    padding: 8px 15px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 16px;
+
+    appearance: none; /* Remove a seta padrão do select */
+    -webkit-appearence: none; /* Remove a seta padrão do select */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px;
+}
+
+form fieldset div select:focus{
+    outline: none;
+    border-color: #007BFF;
+    box-shadow: 0 0 7px 2px rgba(0, 123, 255, 0.1); /* Efeito de brilho */
+}
+
+form button {
+    display: block;
+    width: 150px;
+    height: 40px;
+    margin: 10px auto;
+    padding: 10px 20px;
+
+    border: none;
+    border-radius: 20px;
+    background-color: #007BFF;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* RODAPÉ */
+
+footer {
+    width: 100%;
+    min-height: 80px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
