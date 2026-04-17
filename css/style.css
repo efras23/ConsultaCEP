@@ -40,9 +40,29 @@ form fieldset {
 }
 
 form fieldset div {
+    display: none;
     margin-bottom: 10px;
-    display: flex;
     flex-direction: column;
+}
+
+form fieldset div:first-of-type{
+    display: flex;
+}
+
+form fieldset div.visible {
+    display: flex;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+/* Animação de surgimento suave... */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    } to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 form fieldset div label {
