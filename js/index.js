@@ -2,8 +2,19 @@ function isValidCep(inputCEP){
     return /^(\d{2})\.(\d{3})-(\d{3})$/.test(inputCEP.value);
 }
 
-document.addEventListener("DOMContentLoaded", function(){
+function fillForm(data){
+    let state = document.getElementById("estado");
+    let city = document.getElementById("cidade");
+    let neighborhood = document.getElementById("bairro");
+    let address = document.getElementById("endereco");
 
+    state.value = data.estado;
+    city.value = data.localidade;
+    neighborhood.value = data.bairro;
+    address.value = data.logradouro;
+}
+
+document.addEventListener("DOMContentLoaded", function(){
     const queryBtn = document.getElementById("consultar");
     
     // Tornar campos VISÍVEIS
@@ -20,6 +31,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
     // Máscara de CEP (XX.XXX-XXX)
     inputCEP.addEventListener("input", function(){
+
         let cepAtual = inputCEP.value;
 
         // REGEX
@@ -40,12 +52,12 @@ document.addEventListener("DOMContentLoaded", function(){
                 if (!response.ok) throw new Error("Erro de comunicação com servidor!");
 
                 const data = await response.json();
-                if (data.erro) throw new Error("CEP não encontrado!"); // CEP não existe!
+                if (data.erro) throw new Error("CEP não encontrado!"); // CEP não existe
+
+                fillForm(data); // PREENCHER FORMULÁRIO COM ENDEREÇO!!!
             } catch (e) {
                 console.error("Erro: " + e.message)
             }
-
-
         }
     })
 })
