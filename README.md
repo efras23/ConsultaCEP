@@ -6,4 +6,5 @@ Consulta de endereço no Brasil com base no CEP digitado!
 
 ## Características
 
-- Implementação de "máscara de input" no CEP, garantindo sua correta formatação (XX.XXX-XXX);
+- "Máscara de Input" no CEP, garantindo formatação adequada (XX.XXX-XXX) e ótima Experiência de Usuário (UX);
+- 

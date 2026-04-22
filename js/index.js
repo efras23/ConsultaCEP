@@ -31,11 +31,21 @@ document.addEventListener("DOMContentLoaded", function(){
     })
     
     // Consultar CEP
-    inputCEP.addEventListener("blur", function(){
+    inputCEP.addEventListener("blur", async function(){
         if (isValidCep(inputCEP)){
-            const cep = inputCEP.value.replace(/\D/g, ""); // Apenas dígitos
-            console.log(inputCEP.value + " " + inputCEP.value.length + " chars.");
-            console.log(cep + " " + cep.length + " chars");
+            const cep = inputCEP.value.replace(/\D/g, ""); // Remover NÃO números
+
+            try {
+                const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
+                if (!response.ok) throw new Error("Erro de comunicação com servidor!");
+
+                const data = await response.json();
+                if (data.erro) throw new Error("CEP não encontrado!"); // CEP não existe!
+            } catch (e) {
+                console.error("Erro: " + e.message)
+            }
+
+
         }
     })
 })
