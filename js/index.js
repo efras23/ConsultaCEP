@@ -20,7 +20,7 @@ function showFields(){
     const formDivs = document.querySelectorAll("form fieldset div:not(:first-of-type)");
     
     formDivs.forEach(div => {
-        div.classList.add("visible");                   // Campo inteiro
+        div.classList.add("visible");                  // Campo inteiro
     })
 }
 
@@ -29,13 +29,11 @@ function animateTextsOfFields(){
 
     formDivsInputs.forEach(input => {
         input.classList.remove("text-animation");
-    })
 
-    setTimeout(function(){
-        formDivsInputs.forEach(input => {
-            input.classList.add("text-animation");          // Animar texto do input
-        })
-    }, 15); // timeout necessário para garantir o RECARREGAMENTO das classes pelo navegador, sem "economizar recursos"
+        input.offsetWidth;                             // Pegar largura do elemento (forçar a remoção da classe)
+
+        input.classList.add("text-animation");
+    })
 }
 
 document.addEventListener("DOMContentLoaded", function(){
@@ -90,7 +88,6 @@ document.addEventListener("DOMContentLoaded", function(){
                 
                 isCEPRequested = true;
                 contRequests++;
-                console.log("contRequests = " + contRequests);
             } catch (e) {
                 console.error("Erro: " + e.message)
             }
